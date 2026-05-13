@@ -1,0 +1,25 @@
+[project]
+name = "pii-redactor-starter"
+version = "0.1.0"
+description = "Deterministic PII redaction starter with CSV and audit output"
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+authors = [{ name = "Photon101" }]
+dependencies = []
+
+[project.scripts]
+pii-redactor = "pii_redactor.cli:main"
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0"]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/pii_redactor"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
